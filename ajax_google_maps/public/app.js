@@ -24,7 +24,7 @@ var main = function (countries) {
         console.log(selected);
     }
     updateDisplay(selected);
-    document.querySelector('#info').style.display = 'block';
+    // document.querySelector('#info').style.display = 'block';
 };
 
 var populateSelect = function (countries) {
@@ -46,11 +46,11 @@ var populateSelect = function (countries) {
 };
 
 var updateDisplay = function (country) {
-    var tags = document.querySelectorAll('#info p');
-    tags[0].innerText = country.name;
-    tags[1].innerText = country.population;
-    tags[2].innerText = country.capital;
-    console.log(country.latlng);
+    // var tags = document.querySelectorAll('#info p');
+    // tags[0].innerText = country.name;
+    // tags[1].innerText = country.population;
+    // tags[2].innerText = country.capital;
+    // console.log(country.latlng);
     var center = {lat: country.latlng[0], lng: country.latlng[1]};
     var map = new Map(center, 5);
     var content = "Name: " + country.name + "<br>" + "Population: " + country.population + "<br>" + "Area " + country.area + " km&sup2;" + "<br>" + "Capital: " + country.capital;

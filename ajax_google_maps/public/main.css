@@ -1,4 +1,35 @@
 #map{
-  width: 500px ;
-  height: 500px;
+  margin: 20px auto 0 auto;
+  width: 1000px ;
+  height: 800px;
+  border: 2px solid #000;
+}
+
+body{
+  font-family: verdana, sans-serif;
+  /*background: url(mow.jpg);*/
+  background-image: url(mow.jpg);
+}
+
+h1{
+  text-align: center;
+  background-color: #fff;
+}
+
+.styled-select select {
+  /*background: transparent;*/
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+}
+
+.styled-select{
+  margin: 0 auto 0 auto;
+  width: 268px;
+  height: 34px;
+  border: 2px solid #000;
 }
