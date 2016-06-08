@@ -1,6 +1,6 @@
 
 window.onload = function () {
-    var url = 'https://restcountries.eu/rest/v1'
+    var url = 'https://restcountries.eu/rest/v1';
     var request = new XMLHttpRequest();
     request.open("GET", url);
     request.onload = function () {
@@ -9,7 +9,7 @@ window.onload = function () {
             var countries = JSON.parse(jsonString);
             main(countries);
         }
-    }
+    };
     request.send();
 
 };
@@ -21,10 +21,11 @@ var main = function (countries) {
     if(cached){
         selected = JSON.parse(cached);
         document.querySelector('#countries').selectedIndex = selected.index;
+        console.log(selected);
     }
     updateDisplay(selected);
     document.querySelector('#info').style.display = 'block';
-}
+};
 
 var populateSelect = function (countries) {
     var parent = document.querySelector('#countries');
@@ -42,11 +43,16 @@ var populateSelect = function (countries) {
         updateDisplay(country);
         localStorage.setItem("selectedCountry",JSON.stringify(country));
     });
-}
+};
 
-var updateDisplay = function (lala) {
+var updateDisplay = function (country) {
     var tags = document.querySelectorAll('#info p');
-    tags[0].innerText = lala.name;
-    tags[1].innerText = lala.population;
-    tags[2].innerText = lala.capital;
-}
+    tags[0].innerText = country.name;
+    tags[1].innerText = country.population;
+    tags[2].innerText = country.capital;
+    console.log(country.latlng);
+    var center = {lat: country.latlng[0], lng: country.latlng[1]};
+    var map = new Map(center, 5);
+    // this.googleMap()
+
+};
